@@ -1,0 +1,638 @@
+/* --------------------------------------
+        VARIABLES Y COLORES BASE
+-------------------------------------- */
+:root {
+  --color-azul: #0051A2;
+  --color-azul-oscuro: #002244;
+  --color-blanco: #FFFFFF;
+  --color-dorado: #FFD700;
+  --color-azul-claro: #4FC3F7;
+  --color-titulo: #232323;
+}
+
+/* --------------------------------------
+                RESET
+-------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(90deg, #e3f0ff 0%, #f5f7fa 100%);
+  color: var(--color-titulo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------
+               NAVBAR
+-------------------------------------- */
+header {
+  background: var(--color-azul);
+  height: 68px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 68px;
+  padding: 0 32px;
+}
+
+.logo {
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  font-weight: bold;
+  font-size: 1.08em;
+  padding: 6px 14px;
+  border-radius: 7px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255,255,255,0.15);
+  color: var(--color-dorado);
+}
+
+/* --------------------------------------
+           SEPARADOR DEGRADED
+-------------------------------------- */
+.separador-degrade {
+  width: 100vw;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-dorado) 0%, var(--color-blanco) 30%, var(--color-azul) 100%);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+/* --------------------------------------
+            MAIN & LAYOUT
+-------------------------------------- */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 32px auto 0 auto;
+  padding: 0 16px;
+  flex: 1;
+  display: block;
+}
+
+.main-fixture-grid {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 48px;
+  max-width: 1400px;
+  margin: 30px 0 0 0;
+  padding: 0 0 32px 32px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------
+           TABLA DE POSICIONES
+-------------------------------------- */
+.tabla-posiciones-section {
+  max-width: 440px;
+}
+
+.tabla-posiciones {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--color-blanco);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', Arial, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 1em;
+}
+
+.tabla-posiciones th {
+  background: var(--color-azul);
+  color: var(--color-blanco);
+  font-weight: bold;
+  font-size: 1em;
+  padding: 7px 4px;
+  border: none;
+}
+
+.tabla-posiciones td {
+  padding: 7px 6px;
+  text-align: center;
+  font-size: 1em;
+  border-bottom: 1px solid #e2e7ee;
+  font-weight: 600;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tabla-posiciones td:first-child,
+.tabla-posiciones th:first-child {
+  text-align: center;
+}
+
+.tabla-posiciones .mini-escudo {
+  height: 22px;
+  width: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 7px;
+  margin-left: 0;
+}
+
+.tabla-posiciones tr.lam-row td {
+  background: #e6f0fb;
+  color: var(--color-azul-oscuro);
+}
+
+
+
+.tabla-posiciones tr td {
+  border-left: none;
+  border-right: none;
+}
+
+.tabla-posiciones tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-posiciones td:nth-child(2) {
+  text-align: left;
+  padding-left: 8px;
+  max-width: 120px;
+}
+
+/* --------------------------------------
+            FIXTURE TABLE
+-------------------------------------- */
+.fixture-section {
+  min-width: 440px;
+  max-width: 800px;
+}
+
+.tabla-fixture {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--color-blanco);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', Arial, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 1em;
+}
+
+.tabla-fixture th {
+  background: var(--color-azul);
+  color: var(--color-blanco);
+  font-weight: bold;
+  font-size: 1em;
+  padding: 7px 4px;
+  border: none;
+  text-align: left;
+}
+
+.tabla-fixture td {
+  padding: 7px 6px;
+  text-align: left;
+  font-size: 1em;
+  border-bottom: 1px solid #e2e7ee;
+  font-weight: 600;
+  color: #222;
+  height: 37px;
+}
+
+.tabla-fixture td:last-child,
+.tabla-fixture th:last-child {
+  text-align: right;
+}
+
+.tabla-fixture td.vs, .tabla-fixture span.vs {
+  font-weight: bold;
+  font-size: 1em;
+  color: var(--color-azul);
+  margin: 0 10px;
+}
+
+.tabla-fixture tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-fixture img {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+
+/* --------------------------------------
+         FIXTURE FILA (ALINEADO)
+-------------------------------------- */
+.equipos-fixture {
+  display: grid;
+  grid-template-columns: 1fr 38px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.club-local {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: right;
+}
+
+.club-rival {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+}
+
+.vs {
+  font-size: 1.07em;
+  font-weight: bold;
+  color: var(--color-azul-oscuro);
+  margin: 0 4px;
+  justify-self: center;
+}
+
+/* --------------------------------------
+               HERO / NOTICIAS
+-------------------------------------- */
+.hero {
+  background: linear-gradient(120deg, var(--color-azul) 70%, var(--color-azul-claro) 100%);
+  color: var(--color-blanco);
+  text-align: center;
+  border-radius: 18px;
+  padding: 36px 12px 24px 12px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+}
+.hero h1 {
+  font-size: 2.3em;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.hero p {
+  font-size: 1.13em;
+  margin-bottom: 16px;
+}
+.hero-img {
+  width: 88%;
+  max-width: 450px;
+  border-radius: 16px;
+  margin-top: 18px;
+  border: 3px solid var(--color-dorado);
+  background: var(--color-blanco);
+  box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+}
+
+/* --------------------------------------
+         NOTICIAS DESTACADAS
+-------------------------------------- */
+.destacados {
+  margin-bottom: 36px;
+}
+.destacados h2 {
+  color: var(--color-azul);
+  margin-bottom: 10px;
+}
+.noticias-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.noticia {
+  background: var(--color-blanco);
+  border-radius: 12px;
+  padding: 12px;
+  width: 320px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  border: 2px solid var(--color-azul-claro);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.noticia img {
+  width: 100%;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  border: 1.5px solid var(--color-azul);
+}
+.noticia h3 {
+  color: var(--color-azul-oscuro);
+  margin-bottom: 7px;
+  font-size: 1.14em;
+}
+.noticia p {
+  font-size: 0.98em;
+  color: #444;
+}
+.noticia a {
+  color: var(--color-azul);
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.97em;
+}
+
+/* --------------------------------------
+          PROXIMO PARTIDO BOX
+-------------------------------------- */
+.proximo-partido {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  max-width: 430px;
+  background: #f5f7fa;
+  padding: 22px 16px 16px 16px;
+  text-align: center;
+  color: var(--color-azul-oscuro);
+  border-radius: 0;
+  border: none;
+  border-top: 4px solid var(--color-azul);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  right: 0;
+}
+.proximo-partido h2 {
+  margin-bottom: 12px;
+  color: var(--color-azul-oscuro);
+  font-size: 1.4em;
+  letter-spacing: 1px;
+}
+.partido-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+.equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  max-width: 120px;
+}
+.equipo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: none;
+  border: none;
+  margin-bottom: 4px;
+  margin-top: 0;
+  display: block;
+}
+.vs {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-azul);
+  margin: 0 8px;
+}
+.equipo span {
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 2px;
+  text-align: center;
+  line-height: 1.15em;
+  max-width: 98px;
+  overflow-wrap: break-word;
+}
+.partido-datos {
+  margin-top: 6px;
+  font-size: 1em;
+  color: var(--color-azul-oscuro);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+/* --------------------------------------
+           PLANTEL (SQUAD)
+-------------------------------------- */
+.main-plantel {
+  width: 100%;
+  max-width: 1100px;
+  margin: 32px auto 0 auto;
+  padding: 0 12px 32px 12px;
+}
+.seccion-posicion {
+  margin-top: 36px;
+  color: var(--color-azul);
+  font-size: 1.35em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.grid-plantel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* SIEMPRE 4 columnas, ajustá si querés más/menos */
+  gap: 18px;
+  margin-bottom: 18px;
+  justify-content: start; /* <-- esto es clave */
+  max-width: 880px;
+  margin-left: 0;  /* Alineado a la izquierda */
+  margin-right: auto;
+}
+.grid-plantel-4 {
+  max-width: 880px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+.jugador-card {
+  background: var(--color-blanco);
+  border-radius: 0;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  min-width: 190px;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
+  border: none;
+}
+.jugador-img {
+  width: 100%;
+  height: 175px;
+  position: relative;
+  background: #e8f0fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 0;
+  overflow: hidden;
+}
+.jugador-img img:not(.bandera) {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 0;
+  background: #dde5f0;
+}
+.jugador-img .bandera {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 32px;
+  height: 21px;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px #0001;
+  border: 2px solid #fff;
+  background: #fff;
+}
+.jugador-info {
+  width: 100%;
+  background: var(--color-blanco);
+  padding: 14px 10px 16px 10px;
+  text-align: left;
+  border-top: 4px solid #fff;
+  box-shadow: none;
+  border-radius: 0;
+}
+.jugador-nombre {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.32em;
+  font-weight: bold;
+  color: #10396c;
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.02em;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.jugador-nombre span {
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1em;
+}
+/* Número destacado arriba a la derecha */
+.jugador-img .numero {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #fff;
+  color: #1561a9;
+  font-size: 1.25em;         /* Más chico */
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 7px;
+  box-shadow: 0 1px 6px #0001;
+  border: 2px solid #fff;
+  min-width: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* --------------------------------------
+             RESPONSIVE
+-------------------------------------- */
+@media (max-width: 1100px) {
+  .main-fixture-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 0 10px 24px 10px;
+    margin: 20px auto 0 auto;
+    max-width: 100vw;
+  }
+  .tabla-posiciones-section,
+  .fixture-section {
+    max-width: 100vw;
+  }
+  .tabla-fixture,
+  .tabla-posiciones {
+    font-size: 0.93em;
+  }
+  .equipos-fixture img,
+  .tabla-fixture img,
+  .tabla-posiciones .mini-escudo {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-plantel {
+    max-width: 99vw;
+    padding: 0 2vw 24px 2vw;
+  }
+  /* Todas las grids de plantel (arqueros, defensores, etc) */
+  .grid-plantel,
+  .grid-plantel-arqueros,
+  .grid-plantel-defensores,
+  .grid-plantel-mediocampistas,
+  .grid-plantel-delanteros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .jugador-img img:not(.bandera) {
+    height: 110px;
+  }
+}
