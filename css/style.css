@@ -662,3 +662,21 @@ main {
     height: 110px;
   }
 }
+@media (max-width: 900px) {
+  .main-grid {
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 14px;
+  }
+  .main-col-izq,
+  .main-col-der,
+  .proximo-partido {
+    min-width: 0;
+    max-width: 98vw;
+    width: 100%;
+    align-items: center;
+  }
+  .main-col-der {
+    align-items: center;
+  }
+}
