@@ -417,41 +417,80 @@ main {
 }
 .noticias-lista {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  flex-direction: column;
+  gap: 38px;
+  max-width: 650px;
+  margin: 0 auto;
 }
+
 .noticia {
-  background: var(--color-blanco);
-  border-radius: 12px;
-  padding: 12px;
-  width: 320px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-  border: 2px solid var(--color-azul-claro);
+  background: #f5f7fa;
+  border: 2px solid #4FC3F7;
+  border-radius: 18px;
+  box-shadow: 0 3px 18px 0 rgba(0,0,0,0.07);
+  padding: 30px 36px 28px 36px;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  gap: 18px;
 }
+
 .noticia img {
   width: 100%;
-  border-radius: 7px;
+  max-height: 170px;
+  object-fit: cover;
+  border-radius: 9px;
+  margin-bottom: 14px;
+}
+
+.noticia-titulo {
+  font-size: 1.7em;
+  color: #0051A2;
   margin-bottom: 10px;
-  border: 1.5px solid var(--color-azul);
-}
-.noticia h3 {
-  color: var(--color-azul-oscuro);
-  margin-bottom: 7px;
-  font-size: 1.14em;
-}
-.noticia p {
-  font-size: 0.98em;
-  color: #444;
-}
-.noticia a {
-  color: var(--color-azul);
-  text-decoration: underline;
   font-weight: bold;
-  font-size: 0.97em;
+  letter-spacing: 1px;
 }
+
+.noticia-subtitulo {
+  font-size: 1.18em;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+.noticia-cuerpo section {
+  margin-bottom: 22px;
+}
+
+.noticia-cuerpo h5 {
+  font-size: 1.13em;
+  color: #0051A2;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.noticia-cuerpo p {
+  margin-bottom: 0;
+  line-height: 1.58;
+  font-size: 1.06em;
+  font-weight: 400;
+}
+
+.noticia-final {
+  font-size: 1.16em;
+  color: #0051A2;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.noticia-frase {
+  background: #e3f0ff;
+  border-left: 4px solid #0051A2;
+  margin: 16px 0 0 0;
+  padding: 10px 20px;
+  border-radius: 9px;
+  font-size: 1.04em;
+}
+
 
 /* --------------------------------------
           PROXIMO PARTIDO BOX
