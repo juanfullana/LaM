@@ -183,6 +183,7 @@ main {
   padding: 10px 10px;
   border: none;
   height: 42px;
+  text-align: center;
 }
 
 .tabla-posiciones td {
@@ -198,6 +199,7 @@ main {
   border-bottom: 1.5px solid #e2e7ee;  /* LÍNEA GRIS CLARA ENTRE FILAS */
   transition: background 0.12s;
   height: 42px;
+  text-align: center;
 }
 
 .tabla-posiciones tr:last-child td {
@@ -242,6 +244,14 @@ main {
   vertical-align: middle;
   margin-right: 7px;
   margin-left: 0;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.tabla-posiciones th:nth-child(2),
+.tabla-posiciones td:nth-child(2) {
+  text-align: left;
+  padding-left: 18px;  /* le da aire al escudo y nombre */
 }
 /* --------------------------------------
             FIXTURE TABLE
