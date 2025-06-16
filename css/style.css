@@ -122,13 +122,11 @@ main {
 }
 
 .main-fixture-grid {
-  display: grid;
-  grid-template-columns: 430px 1fr;
-  gap: 48px;
-  max-width: 1400px;
-  margin: 30px 0 0 0;
-  padding: 0 0 32px 32px;
-  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;            /* Espacio entre tablas, aumentá si hace falta */
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .main-grid {
@@ -158,19 +156,23 @@ main {
            TABLA DE POSICIONES
 -------------------------------------- */
 .tabla-posiciones-section {
-  max-width: 440px;
+  width: auto;
+  min-width: 650px;
+  max-width: none;
 }
 
 .tabla-posiciones {
-  width: 100%;
+  width: auto;
+  min-width: 650px;
   border-collapse: separate;
   border-spacing: 0;
   background: var(--color-blanco);
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   font-family: 'Montserrat', Arial, sans-serif;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   font-size: 1em;
+  table-layout: auto;
 }
 
 .tabla-posiciones th {
@@ -178,23 +180,57 @@ main {
   color: var(--color-blanco);
   font-weight: bold;
   font-size: 1em;
-  padding: 7px 4px;
+  padding: 10px 10px;
   border: none;
 }
 
 .tabla-posiciones td {
-  padding: 7px 6px;
+  padding: 10px 10px;
   text-align: center;
   font-size: 1em;
-  border-bottom: 1px solid #e2e7ee;
   font-weight: 600;
   color: #222;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
+  text-overflow: unset;
+  max-width: none;
+  border-bottom: 1.5px solid #e2e7ee;  /* LÍNEA GRIS CLARA ENTRE FILAS */
+  transition: background 0.12s;
 }
+
+.tabla-posiciones tr:last-child td {
+  border-bottom: none;  /* La última fila sin línea abajo */
+}
+
+/* --- PRIMERA COLUMNA Y HEADER CENTRADOS --- */
 .tabla-posiciones td:first-child,
 .tabla-posiciones th:first-child {
   text-align: center;
+}
+
+/* --- REDONDEADO --- */
+.tabla-posiciones {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* --- FILA HOVER (opcional: efecto visual al pasar mouse) --- */
+.tabla-posiciones tbody tr:hover td {
+  background: #f3faff;
+}
+
+/* --- SELECCIÓN ALTERNADA (opcional: líneas "zebra") --- */
+.tabla-posiciones tbody tr:nth-child(even) td {
+  background: #f8fbfd;
+}
+.tabla-posiciones-section, .fixture-section {
+  flex: none;           /* No dejar que achiquen por culpa del otro */
+}
+
+.tabla-posiciones tr.mi-equipo td {
+  background: #d3e7ff;
+  color: #0051A2;
+  font-weight: bold;
 }
 
 .tabla-posiciones .mini-escudo {
@@ -205,29 +241,6 @@ main {
   margin-right: 7px;
   margin-left: 0;
 }
-
-.tabla-posiciones tr.lam-row td {
-  background: #e6f0fb;
-  color: var(--color-azul-oscuro);
-}
-
-
-
-.tabla-posiciones tr td {
-  border-left: none;
-  border-right: none;
-}
-
-.tabla-posiciones tr:last-child td {
-  border-bottom: none;
-}
-
-.tabla-posiciones td:nth-child(2) {
-  text-align: left;
-  padding-left: 8px;
-  max-width: 120px;
-}
-
 /* --------------------------------------
             FIXTURE TABLE
 -------------------------------------- */
