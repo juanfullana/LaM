@@ -490,7 +490,13 @@ main {
   border-radius: 9px;
   font-size: 1.04em;
 }
-
+.banner-img-difusa img {
+  width: 100%;
+  border-radius: 20px 20px 0 0; /* Solo arriba si tu caja es redonda arriba */
+  box-shadow: 0 2px 12px 2px rgba(50,100,200,0.07);
+  /* Opcional: un filtro para "despegar" la imagen */
+  filter: drop-shadow(0 0 16px #e3f0ff);
+}
 
 /* --------------------------------------
           PROXIMO PARTIDO BOX
